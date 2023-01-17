@@ -29,16 +29,38 @@ console.log(navigatorReverse);
 
 // Bonus1
 
-let longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu tortor felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean aliquam tempor elit a accumsan. Nullam non tristique elit, sit amet imperdiet orci. Sed mollis rhoncus felis, ac pretium arcu imperdiet et. Nulla feugiat tortor mi, id venenatis felis tincidunt quis. Nulla id luctus odio. Praesent commodo sed ex luctus condimentum. In et efficitur nunc, vitae ullamcorper sapien. Maecenas molestie, ante et gravida consequat, tellus tortor scelerisque tortor, nec accumsan ipsum nulla non est. Praesent quis augue at diam tempor sodales eget sit amet lacus. "
+let longText = "et Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu tortor felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean aliquam tempor elit a accumsan. Nullam non tristique elit, sit amet et imperdiet orci. Sed mollis rhoncus felis, ac pretium arcu imperdiet et. Nulla feugiat tortor mi, id venenatis felis tincidunt quis. Nulla id luctus odio. Praesent commodo sed ex luctus condimentum. In et efficitur nunc, vitae ullamcorper sapien. Maecenas molestie, ante et gravida consequat, tellus tortor scelerisque tortor, nec accumsan ipsum nulla non est. Praesent quis augue at diam tempor sodales eget sit amet lacus."
 
 let countWords = 0;
+if (longText.length !== 0) {
+    countWords ++
+};
 for (let i = 0; i < longText.length; i++) {
     if ( longText[i] === " ") {
         countWords ++
     }
 };
+if (longText[0] === " ") {
+    countWords = countWords - 1
+}
 console.log(`number of words in the string is: ${countWords} `);
 
+// 2nd part
+let longTextNoSymbol = longText.replace(/[^a-z A-Z 0-9]+/g,' ');
+
+console.log(longTextNoSymbol)
+
+let countEt = 0;
+if (longTextNoSymbol[0] + longTextNoSymbol[1] + longTextNoSymbol[2] === "et " ) {
+    countEt ++
+}
+
+for (let i = 0; i < longTextNoSymbol.length; i++) {
+    if ( longTextNoSymbol[i] + longTextNoSymbol[i+1] + longTextNoSymbol[i+2] + longTextNoSymbol[i+3] === " et ") {
+        countEt ++
+    }
+};
+console.log(countEt);
 
 
 // Bonus2
